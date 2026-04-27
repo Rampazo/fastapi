@@ -16,7 +16,9 @@ def home():
 
 @app.post("/verificar-idade")
 def verificar_idade(pessoa: PessoaRequest):
-    if pessoa.idade >= 18:
+    if pessoa.idade >= 65:
+        classificacao = "idosa"
+    elif pessoa.idade >= 18:
         classificacao = "maior de idade"
     else:
         classificacao = "menor de idade"

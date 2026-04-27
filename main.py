@@ -6,7 +6,7 @@ app = FastAPI()
 
 class PessoaRequest(BaseModel):
     nome: str = Field(..., example="João")
-    idade: int = Field(..., example=20)
+    idade: int = Field(..., ge=0, example=20)
 
 
 @app.get("/")
